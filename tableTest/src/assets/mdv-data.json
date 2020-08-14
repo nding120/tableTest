@@ -1,0 +1,55 @@
+{
+    "plans": {
+        "Medical": [{
+                "name": "m-plan1",
+                "id": "1",
+                "planType": "hmo",
+                "price": "$1200"
+            },
+            {
+                "name": "m-plan2",
+                "id": "2",
+                "planType": "hmo",
+                "price": "$2500"
+            },
+            {
+                "name": "m-plan3",
+                "id": "3",
+                "planType": "ppo",
+                "price": "$2200"
+            },
+            {
+                "name": "m-plan4",
+                "id": "4",
+                "planType": "epo",
+                "price": "$3200"
+            }
+        ],
+        "Dental": [{
+                "name": "d-plan1",
+                "id": "1",
+                "planType": "hmo",
+                "price": "$1200"
+            },
+            {
+                "name": "d-plan2",
+                "id": "2",
+                "planType": "hmo",
+                "price": "$2500"
+            }
+        ],
+        "Vision": [{
+                "name": "v-plan1",
+                "id": "1",
+                "planType": "hmo",
+                "price": "$200"
+            },
+            {
+                "name": "v-plan2",
+                "id": "2",
+                "planType": "hmo",
+                "price": "$500"
+            }
+        ]
+    }
+}

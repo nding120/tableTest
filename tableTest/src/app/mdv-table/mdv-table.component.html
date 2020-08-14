@@ -1,0 +1,50 @@
+<div class="planTable">
+    <button (click)="SelectAll()">select All</button>
+    <button (click)="isSelectAll = false; tableChecked = []; count = 0">deSelect All</button>
+    <p>{{count}}</p>
+    <table class="planTable_medical">
+        <thead>
+            <th></th>
+            <th *ngFor="let header of medicalHeader">{{header}}</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of medicalPlans; let i=index">
+                <td><input type="checkbox" [checked]="tableChecked[i]" (change)="selectRow(i, $event.target.checked)"></td>
+                <td *ngFor="let header of medicalHeader">{{item[header]}}</td>
+            </tr>
+            <p>Dental plans</p>
+            <tr *ngFor="let dentalitem of dentalPlans">
+                <td><input type="checkbox"></td>
+                <td *ngFor="let header of medicalHeader">{{dentalitem[header]}}</td>
+            </tr>
+            <p>Vision plans</p>
+            <tr *ngFor="let visionitem of visionPlans">
+                <td><input type="checkbox"></td>
+                <td *ngFor="let header of medicalHeader">{{visionitem[header]}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- <ng-container *ngFor="let item of dentalPlans; let i = index">
+        <div class="combo" *ngFor="let option of visionPlans; let j= index">
+            <p>{{item.name}}</p>
+            <select (change)="combo(i, $event)">
+            <option [value]="option.name">{{option.name}}</option>
+          </select>
+        </div>
+    </ng-container> -->
+    <div *ngIf="dentalPlans?.length">
+        <p>{{dentalPlans[0].name}}</p>
+        <select (change)="comboOne($event)">
+            <option *ngFor="let option of visionPlans; let j= index" [value]="option.name">{{option.name}}</option>
+        </select>
+    </div>
+
+    <div *ngIf="dentalPlans?.length">
+        <p>{{dentalPlans[1].name}}</p>
+        <select>
+            <option *ngFor="let option of visionPlans; let j= index" [value]="two" >{{two}}</option>
+        </select>
+    </div>
+
+</div>
